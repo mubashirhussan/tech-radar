@@ -59,7 +59,7 @@ export default function Dropdown({
         onClick={() => setOpen((prev) => !prev)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex h-10 w-full items-center justify-between gap-2 rounded-md border border-border bg-background px-3 text-sm text-foreground transition-colors hover:border-muted focus:outline-none focus:ring-2 focus:ring-ring"
+        className="flex h-10 w-full items-center justify-between gap-2 rounded-md border border-border bg-background px-3 text-sm text-foreground transition-colors hover:border-muted focus:outline-none"
       >
         <span className={value ? "truncate" : "truncate text-muted"}>
           {value || placeholder}
@@ -81,7 +81,7 @@ export default function Dropdown({
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
                   placeholder="Search..."
-                  className="h-9 w-full rounded-md border border-border bg-background pl-8 pr-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="h-9 w-full rounded-md border border-border bg-background pl-8 pr-3 text-sm text-foreground placeholder:text-muted focus:outline-none"
                 />
               </span>
             </div>

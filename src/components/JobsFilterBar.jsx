@@ -33,7 +33,7 @@ export default function JobsFilterBar({
               value={search}
               onChange={(event) => onSearchChange(event.target.value)}
               placeholder="Search job title or keyword"
-              className="h-10 w-full rounded-md border border-border bg-background pl-9 pr-3 text-sm text-foreground placeholder:text-muted transition-colors hover:border-muted focus:outline-none focus:ring-2 focus:ring-ring"
+              className="h-10 w-full rounded-md border border-border bg-background pl-9 pr-3 text-sm text-foreground placeholder:text-muted transition-colors hover:border-muted focus:outline-none"
             />
           </span>
         </label>
