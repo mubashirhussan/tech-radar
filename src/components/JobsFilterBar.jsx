@@ -20,7 +20,7 @@ export default function JobsFilterBar({
   const hasFilters = search || city || company || workplace;
 
   return (
-    <div className="rounded-lg border border-border bg-background p-4 shadow-card">
+    <div className="rounded-lg border border-border bg-subtle p-4 shadow-card">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-end">
         <label className="block w-full lg:flex-1">
           <span className="mb-1.5 block text-xs font-medium text-muted">Search</span>

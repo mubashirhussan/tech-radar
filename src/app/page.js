@@ -50,14 +50,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
-      <header>
-        <h1 className="text-2xl font-semibold tracking-tight text-foreground">Jobs</h1>
-        <p className="mt-1 text-sm text-muted">
-          {filteredJobs.length} {filteredJobs.length === 1 ? "opening" : "openings"} available
-        </p>
-      </header>
-
-      <div className="mx-auto w-full max-w-[1000px]">
+      <div className="mx-auto flex w-full max-w-[1000px] flex-col gap-4">
         <JobsFilterBar
           search={search}
           city={city}
