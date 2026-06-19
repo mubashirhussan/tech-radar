@@ -1,3 +1,4 @@
+import Button from "./Button";
 import { BuildingIcon } from "./icons";
 
 export default function CompanyAbout({ company }) {
@@ -20,14 +21,9 @@ export default function CompanyAbout({ company }) {
           </div>
           <p className="mt-0.5 text-sm text-muted">{company.tagline}</p>
         </div>
-        <a
-          href={company.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden shrink-0 rounded-md border border-border px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-subtle sm:inline-block"
-        >
+        <Button href={company.website} className="hidden shrink-0 sm:inline-flex">
           Visit website
-        </a>
+        </Button>
       </div>
 
       <p className="mt-4 text-sm leading-relaxed text-muted">{company.description}</p>

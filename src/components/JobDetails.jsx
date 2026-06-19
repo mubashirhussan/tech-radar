@@ -1,3 +1,4 @@
+import Button from "./Button";
 import {
   BriefcaseIcon,
   BuildingIcon,
@@ -35,14 +36,9 @@ export default function JobDetails({ job }) {
               {job.company}
             </p>
           </div>
-          <a
-            href={job.applyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ring"
-          >
+          <Button href={job.applyUrl} className="shrink-0">
             Apply now
-          </a>
+          </Button>
         </div>
 
         <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
