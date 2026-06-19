@@ -22,6 +22,7 @@ export const jobs = [
       "Experience with design systems and accessibility.",
     ],
     tags: ["React", "TypeScript", "Design Systems"],
+    applyUrl: "https://careers.northwindlabs.com/jobs/senior-frontend-engineer",
   },
   {
     id: "2",
@@ -46,6 +47,7 @@ export const jobs = [
       "Experience with cloud infrastructure.",
     ],
     tags: ["Node.js", "PostgreSQL", "AWS"],
+    applyUrl: "https://careers.northwindlabs.com/jobs/backend-engineer-nodejs",
   },
   {
     id: "3",
@@ -70,6 +72,7 @@ export const jobs = [
       "Fluency in Figma and prototyping.",
     ],
     tags: ["Figma", "UX Research", "Prototyping"],
+    applyUrl: "https://jobs.heliosystems.io/product-designer",
   },
   {
     id: "4",
@@ -94,6 +97,7 @@ export const jobs = [
       "Strong scripting skills.",
     ],
     tags: ["Kubernetes", "Terraform", "CI/CD"],
+    applyUrl: "https://jobs.heliosystems.io/devops-engineer",
   },
   {
     id: "5",
@@ -118,6 +122,7 @@ export const jobs = [
       "Experience with a BI tool is a plus.",
     ],
     tags: ["SQL", "Power BI", "Excel"],
+    applyUrl: "https://vertexretail.com/careers/data-analyst",
   },
   {
     id: "6",
@@ -142,6 +147,7 @@ export const jobs = [
       "Excellent communication skills.",
     ],
     tags: ["Leadership", "Agile", "Hiring"],
+    applyUrl: "https://vertexretail.com/careers/engineering-manager",
   },
 ];
 

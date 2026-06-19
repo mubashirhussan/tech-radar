@@ -1,10 +1,20 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { SearchIcon } from "./icons";
 
-export default function Dropdown({ label, placeholder, value, options, onChange }) {
+export default function Dropdown({
+  label,
+  placeholder,
+  value,
+  options,
+  onChange,
+  searchable = false,
+}) {
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
   const containerRef = useRef(null);
+  const searchRef = useRef(null);
 
   useEffect(() => {
     function handlePointerDown(event) {
@@ -15,6 +25,23 @@ export default function Dropdown({ label, placeholder, value, options, onChange 
     document.addEventListener("pointerdown", handlePointerDown);
     return () => document.removeEventListener("pointerdown", handlePointerDown);
   }, []);
+
+  useEffect(() => {
+    if (open && searchable) {
+      searchRef.current?.focus();
+    }
+    if (!open) {
+      setQuery("");
+    }
+  }, [open, searchable]);
+
+  const visibleOptions = useMemo(() => {
+    if (!searchable || !query.trim()) {
+      return options;
+    }
+    const term = query.trim().toLowerCase();
+    return options.filter((option) => option.toLowerCase().includes(term));
+  }, [options, query, searchable]);
 
   function select(next) {
     onChange(next);
@@ -41,23 +68,43 @@ export default function Dropdown({ label, placeholder, value, options, onChange 
       </button>
 
       {open ? (
-        <ul
-          role="listbox"
-          className="absolute z-20 mt-1.5 max-h-64 w-full overflow-auto rounded-md border border-border bg-background py-1 shadow-popover"
-        >
-          <Option selected={!value} onClick={() => select("")}>
-            {placeholder}
-          </Option>
-          {options.map((option) => (
-            <Option
-              key={option}
-              selected={option === value}
-              onClick={() => select(option)}
-            >
-              {option}
+        <div className="absolute z-20 mt-1.5 w-full overflow-hidden rounded-md border border-border bg-background shadow-popover">
+          {searchable ? (
+            <div className="border-b border-border p-2">
+              <span className="relative block">
+                <span className="pointer-events-none absolute inset-y-0 left-2.5 flex items-center text-muted">
+                  <SearchIcon className="size-4" />
+                </span>
+                <input
+                  ref={searchRef}
+                  type="text"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Search..."
+                  className="h-9 w-full rounded-md border border-border bg-background pl-8 pr-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+              </span>
+            </div>
+          ) : null}
+
+          <ul role="listbox" className="max-h-64 overflow-auto py-1">
+            <Option selected={!value} onClick={() => select("")}>
+              {placeholder}
             </Option>
-          ))}
-        </ul>
+            {visibleOptions.map((option) => (
+              <Option
+                key={option}
+                selected={option === value}
+                onClick={() => select(option)}
+              >
+                {option}
+              </Option>
+            ))}
+            {visibleOptions.length === 0 ? (
+              <li className="px-3 py-2 text-sm text-muted">No matches</li>
+            ) : null}
+          </ul>
+        </div>
       ) : null}
     </div>
   );

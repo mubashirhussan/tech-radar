@@ -45,6 +45,7 @@ export default function JobsFilterBar({
             value={city}
             options={cities}
             onChange={onCityChange}
+            searchable
           />
         </div>
 
@@ -55,6 +56,7 @@ export default function JobsFilterBar({
             value={company}
             options={companies}
             onChange={onCompanyChange}
+            searchable
           />
         </div>
 

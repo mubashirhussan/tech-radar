@@ -57,20 +57,22 @@ export default function Home() {
         </p>
       </header>
 
-      <JobsFilterBar
-        search={search}
-        city={city}
-        company={company}
-        workplace={workplace}
-        cities={cities}
-        companies={companies}
-        workplaces={workplaces}
-        onSearchChange={setSearch}
-        onCityChange={setCity}
-        onCompanyChange={setCompany}
-        onWorkplaceChange={setWorkplace}
-        onReset={resetFilters}
-      />
+      <div className="mx-auto w-full max-w-[1000px]">
+        <JobsFilterBar
+          search={search}
+          city={city}
+          company={company}
+          workplace={workplace}
+          cities={cities}
+          companies={companies}
+          workplaces={workplaces}
+          onSearchChange={setSearch}
+          onCityChange={setCity}
+          onCompanyChange={setCompany}
+          onWorkplaceChange={setWorkplace}
+          onReset={resetFilters}
+        />
+      </div>
 
       <div className="grid min-h-0 flex-1 grid-cols-1 gap-4 lg:grid-cols-[380px_1fr]">
         <div className="min-h-0 overflow-y-auto lg:pr-1">
