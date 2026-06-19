@@ -1,0 +1,70 @@
+---
+description: Design language, styling rules, and clean-code standards for this app
+alwaysApply: true
+---
+
+# Design & Code Quality
+
+This app uses **Next.js 16, React 19, and Tailwind CSS v4**. Every UI must look like a polished, hand-crafted Figma design — never a generic AI-generated template.
+
+## Design Language (look like it came from Figma)
+
+Avoid the default "AI look": purple/indigo gradients, centered hero with a giant emoji, glassmorphism on everything, identical rounded cards everywhere, generic `shadow-lg` boxes.
+
+Instead:
+
+- **Deliberate spacing & hierarchy** — use a consistent spacing scale (`gap-2/4/6/8`), clear type scale, and intentional alignment. Whitespace is a design choice, not an accident.
+- **Restrained, intentional color** — define colors as CSS variables / `@theme` tokens in `globals.css` and use them via Tailwind tokens. No random hex values scattered in markup.
+- **Subtle depth** — prefer thin borders (`border border-black/5`) and soft, low-opacity shadows over heavy drop shadows and glows.
+- **Consistent radii & components** — pick one radius scale and reuse shared components; don't reinvent a button/card per page.
+- **Real content layout** — design for actual data and states (empty, loading, error), not lorem-ipsum placeholders.
+
+## Typography (corporate)
+
+- **Font: IBM Plex Sans only.** It is loaded via `next/font` in `layout.js` and exposed as the `--font-sans` token. Never import or reference any other font family (no Geist, Arial, system fallbacks in markup).
+- Use the `font-sans` utility (default on `body`); never hardcode `font-family` in components.
+- Available weights: **400 / 500 / 600 / 700**. Don't use weights outside this set.
+- Use the `--text-*` scale with appropriate `--leading-*` line-heights. Keep type restrained and consistent — corporate, not flashy.
+
+## Pixel-Perfect Implementation
+
+- **Match the reference exactly** — when a Figma/screenshot reference is given, replicate spacing, font sizes, weights, colors, radii, and borders precisely. Eyeball nothing.
+- **Use the design tokens** defined in `src/app/globals.css` (`@theme`). Map design values to the nearest token; if a needed value is missing, add a token there — never hardcode raw `px`/hex in components.
+- **Stick to the 4px grid** — all spacing comes from the Tailwind scale (driven by `--spacing`). Avoid arbitrary one-off values like `mt-[13px]`.
+- **Exact typography** — use the `--text-*` scale and correct `font-weight`/`line-height`; don't approximate sizes.
+- **Account for every state** — hover, focus (visible ring), active, disabled, loading, and empty states, matching the design.
+- **Verify** — compare against the reference at 100% zoom before considering it done.
+
+## Styling Rules
+
+- **No inline styles.** Never use the `style={{ ... }}` prop.
+
+```tsx
+// ❌ BAD
+<div style={{ padding: 16, background: "#fff", borderRadius: 8 }}>
+
+// ✅ GOOD
+<div className="p-4 bg-background rounded-lg">
+```
+
+- Style with **Tailwind utility classes**. For dynamic values, drive them through Tailwind tokens / CSS variables defined in `globals.css`, not inline `style`.
+- The only acceptable use of `style` is binding a runtime-only CSS variable (e.g. `style={{ "--progress": value }}`) — and only when there is no Tailwind alternative.
+- Reuse shared UI components instead of duplicating class strings across files.
+
+## Clean Code
+
+- **No dead or filler code** — no unused imports, variables, props, commented-out blocks, or placeholder `console.log`.
+- **No narration comments.** Only comment non-obvious intent or constraints.
+
+```tsx
+// ❌ BAD
+// increment the counter
+setCount(count + 1);
+
+// ✅ GOOD (only when intent is non-obvious)
+// debounce to avoid hammering the radar API on every keystroke
+```
+
+- Keep components small and single-purpose; extract reusable logic into hooks and shared components.
+- Use clear, descriptive names; prefer early returns over deep nesting.
+- Write only what the task needs — no speculative abstractions or "just in case" options.
