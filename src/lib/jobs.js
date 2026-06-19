@@ -1,0 +1,150 @@
+export const jobs = [
+  {
+    id: "1",
+    title: "Senior Frontend Engineer",
+    company: "Northwind Labs",
+    location: "Lahore",
+    type: "Full-time",
+    workplace: "Hybrid",
+    level: "Senior",
+    salary: "PKR 450k – 600k",
+    postedAt: "2 days ago",
+    summary:
+      "Build and scale the design system and core product surfaces with React and TypeScript.",
+    responsibilities: [
+      "Own delivery of complex frontend features end to end.",
+      "Maintain and extend the shared component library.",
+      "Partner with design to ship pixel-perfect interfaces.",
+    ],
+    requirements: [
+      "5+ years building production React applications.",
+      "Strong TypeScript and modern CSS fundamentals.",
+      "Experience with design systems and accessibility.",
+    ],
+    tags: ["React", "TypeScript", "Design Systems"],
+  },
+  {
+    id: "2",
+    title: "Backend Engineer (Node.js)",
+    company: "Northwind Labs",
+    location: "Karachi",
+    type: "Full-time",
+    workplace: "On-site",
+    level: "Mid",
+    salary: "PKR 350k – 500k",
+    postedAt: "4 days ago",
+    summary:
+      "Design resilient APIs and services powering our data platform at scale.",
+    responsibilities: [
+      "Design and build REST and event-driven services.",
+      "Improve reliability, observability, and performance.",
+      "Collaborate across teams on data contracts.",
+    ],
+    requirements: [
+      "3+ years with Node.js in production.",
+      "Solid understanding of databases and caching.",
+      "Experience with cloud infrastructure.",
+    ],
+    tags: ["Node.js", "PostgreSQL", "AWS"],
+  },
+  {
+    id: "3",
+    title: "Product Designer",
+    company: "Helio Systems",
+    location: "Islamabad",
+    type: "Full-time",
+    workplace: "Remote",
+    level: "Senior",
+    salary: "PKR 400k – 550k",
+    postedAt: "1 week ago",
+    summary:
+      "Shape end-to-end product experiences from research to high-fidelity design.",
+    responsibilities: [
+      "Lead design for key product areas.",
+      "Run discovery and usability research.",
+      "Maintain and evolve the Figma design system.",
+    ],
+    requirements: [
+      "4+ years in product design.",
+      "Strong portfolio of shipped products.",
+      "Fluency in Figma and prototyping.",
+    ],
+    tags: ["Figma", "UX Research", "Prototyping"],
+  },
+  {
+    id: "4",
+    title: "DevOps Engineer",
+    company: "Helio Systems",
+    location: "Lahore",
+    type: "Contract",
+    workplace: "Hybrid",
+    level: "Mid",
+    salary: "PKR 380k – 520k",
+    postedAt: "1 week ago",
+    summary:
+      "Automate delivery pipelines and harden cloud infrastructure for reliability.",
+    responsibilities: [
+      "Build and maintain CI/CD pipelines.",
+      "Manage Kubernetes clusters and IaC.",
+      "Drive monitoring and incident response.",
+    ],
+    requirements: [
+      "3+ years in DevOps or SRE roles.",
+      "Hands-on with Docker, Kubernetes, Terraform.",
+      "Strong scripting skills.",
+    ],
+    tags: ["Kubernetes", "Terraform", "CI/CD"],
+  },
+  {
+    id: "5",
+    title: "Data Analyst",
+    company: "Vertex Retail",
+    location: "Karachi",
+    type: "Full-time",
+    workplace: "On-site",
+    level: "Junior",
+    salary: "PKR 200k – 300k",
+    postedAt: "3 days ago",
+    summary:
+      "Turn raw business data into clear insights and dashboards for stakeholders.",
+    responsibilities: [
+      "Build dashboards and recurring reports.",
+      "Analyze trends and present findings.",
+      "Partner with teams to define metrics.",
+    ],
+    requirements: [
+      "1+ years in analytics or BI.",
+      "Strong SQL and spreadsheet skills.",
+      "Experience with a BI tool is a plus.",
+    ],
+    tags: ["SQL", "Power BI", "Excel"],
+  },
+  {
+    id: "6",
+    title: "Engineering Manager",
+    company: "Vertex Retail",
+    location: "Islamabad",
+    type: "Full-time",
+    workplace: "Hybrid",
+    level: "Lead",
+    salary: "PKR 700k – 900k",
+    postedAt: "5 days ago",
+    summary:
+      "Lead and grow a cross-functional engineering team delivering customer-facing products.",
+    responsibilities: [
+      "Coach and develop engineers.",
+      "Own delivery, quality, and roadmap.",
+      "Partner with product and design leadership.",
+    ],
+    requirements: [
+      "2+ years managing engineering teams.",
+      "Strong technical background.",
+      "Excellent communication skills.",
+    ],
+    tags: ["Leadership", "Agile", "Hiring"],
+  },
+];
+
+export function getUniqueValues(items, key) {
+  return [...new Set(items.map((item) => item[key]))].sort();
+}
