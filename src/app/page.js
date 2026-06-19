@@ -49,8 +49,8 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
-      <div className="mx-auto flex w-full max-w-[1000px] flex-col gap-4">
+    <div className="flex flex-1 flex-col p-4 sm:p-6">
+      <div className="mx-auto flex w-full max-w-[1260px] flex-1 flex-col gap-4">
         <JobsFilterBar
           search={search}
           city={city}
@@ -65,15 +65,15 @@ export default function Home() {
           onWorkplaceChange={setWorkplace}
           onReset={resetFilters}
         />
-      </div>
 
-      <div className="grid min-h-0 flex-1 grid-cols-1 gap-4 lg:grid-cols-[380px_1fr]">
-        <div className="min-h-0 overflow-y-auto lg:pr-1">
-          <JobList jobs={filteredJobs} selectedId={selectedJob?.id} onSelect={setSelectedId} />
-        </div>
+        <div className="grid min-h-0 flex-1 grid-cols-1 gap-4 lg:grid-cols-[380px_1fr]">
+          <div className="min-h-0 overflow-y-auto lg:pr-1">
+            <JobList jobs={filteredJobs} selectedId={selectedJob?.id} onSelect={setSelectedId} />
+          </div>
 
-        <div className="min-h-0 overflow-hidden rounded-lg border border-border bg-background shadow-card">
-          <JobDetails job={selectedJob} />
+          <div className="min-h-0 overflow-hidden rounded-lg border border-border bg-background shadow-card">
+            <JobDetails job={selectedJob} />
+          </div>
         </div>
       </div>
     </div>

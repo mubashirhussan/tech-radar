@@ -18,7 +18,7 @@ export default function Header() {
           <span className="flex size-7 items-center justify-center rounded-md bg-primary text-sm font-semibold text-primary-foreground">
             T
           </span>
-          <span className="text-sm font-semibold text-foreground">Tech Radar</span>
+          <span className="text-sm font-semibold text-foreground">Tech Jobs Pakistan</span>
         </Link>
 
         <nav className="flex items-center gap-1">

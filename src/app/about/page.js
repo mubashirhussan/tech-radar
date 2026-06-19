@@ -13,7 +13,7 @@ export default function AboutCompany() {
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 sm:p-6">
-      <div className="mx-auto flex w-full max-w-[900px] flex-col gap-4">
+      <div className="mx-auto flex w-full max-w-[1260px] flex-col gap-4">
         <header>
           <h1 className="text-2xl font-semibold tracking-tight text-foreground">
             About Company
