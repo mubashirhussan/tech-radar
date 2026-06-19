@@ -10,9 +10,9 @@
   --color-muted: #6b7280;
   --color-subtle: #f4f4f5;
   --color-border: #e4e4e7;
-  --color-primary: #2563eb;
+  --color-primary: #0f766e;
   --color-primary-foreground: #ffffff;
-  --color-ring: #93c5fd;
+  --color-ring: #5eead4;
 
   /* Type scale (rem-based for crisp scaling) */
   --text-xs: 0.75rem;
@@ -54,7 +54,7 @@
     --color-muted: #9ca3af;
     --color-subtle: #18181b;
     --color-border: #27272a;
-    --color-ring: #1d4ed8;
+    --color-ring: #115e59;
   }
 }
 
